@@ -1,0 +1,103 @@
+body {
+    color: #545454;
+    display: flex;
+    font-family: sans-serif;
+    justify-content: center;
+}
+
+#game {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.container-jogo {
+    background: #14BDAC;
+    margin: 25px;
+    padding: 25px;
+    border-radius: 15px;
+    max-width: 295px;
+}
+
+.estado-acao {
+    display: flex;
+    margin-top: 15px;
+    font-size: 20px;
+    justify-content: space-around;
+    height: 30px;
+}
+
+.estado span {
+    color: #F2EBD3;
+}
+
+.reiniciar {
+    cursor: pointer;
+}
+
+.reiniciar:hover {
+    color: #F2EBD3;
+}
+
+.grade-jogo {
+    background: #0DA192;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    grid-column-gap: 10px; /* Espaçamento horizontal entre as células */
+    grid-row-gap: 5px; /* Espaçamento vertical entre as células */
+    margin-top: 25px;
+}
+
+
+.casa-jogo {
+    background: #14BDAC;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    height: 75px;
+    width: 75px;
+}
+
+.x,
+.o {
+    cursor: default;
+}
+
+.x::after {
+    content: '×';
+    font-size: 75px;
+}
+
+.o::after {
+    content: '○';
+    color: #F2EBD3;
+    font-size: 85px;
+}
+
+.venceu::after {
+    color: #BD022F;
+}
+
+@media only screen and (max-width: 540px) {
+    .container-jogo {
+        margin: 15px;
+        padding: 15px;
+        max-width: calc((100vw - 30px) * 295 / 295);
+    }
+
+    .casa-jogo {
+        height: calc((100vw - 30px) * 40 / 295);
+        width: calc((100vw - 30px) * 40 / 295);
+    }
+
+    .x::after {
+        font-size: calc((100vw - 30px) * 40 / 295 * 0.8);
+    }
+
+    .o::after {
+        font-size: calc((100vw - 30px) * 50 / 295 * 0.8);
+    }
+}
+
